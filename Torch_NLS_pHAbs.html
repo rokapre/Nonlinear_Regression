@@ -14283,7 +14283,7 @@ Penalty(A_{max},pK_{a},\phi) = \lambda_{A_{max}} |A_{max}| + \lambda_{pK_{a}} |p
 \end{equation}<p>The minimization problem, with $\theta = (A_{max},pK_{a},\phi)$ then becomes:</p>
 \begin{equation}
 
-\underset{\theta}{\arg\max} (Loss(\theta) + Penalty(\theta))
+\underset{\theta}{\arg\min} (Loss(\theta) + Penalty(\theta))
 
 \end{equation}
 </div>
@@ -17067,8 +17067,10 @@ phi 0.092 0.497
 \begin{equation}
 
 A_{max} \sim N(1,0.2^{2}) \\ 
+
 pK_{a} \sim N(7.6,0.5^{2}) \\ 
-\phi \sim N(0.5,0.1^{2})
+
+\phi \sim N(0.5,0.1^{2}) \\
 
 \end{equation}<p>Notice that nn.Parameter() needs to be used on the weights so that PyTorch optimizer later on knows these are the custom parameters of the layer. Additionally, in the pHAbsLayer custom layer we initialize regularizers to 0, and instead choose to configure them when the pHAbsModel containing the layer is instantiated.</p>
 
